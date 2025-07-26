@@ -16,7 +16,6 @@ $Question = Read-Host "Which log would you like to check?"
 if ($LogNamesTable.Values -contains $Question) {
     #Write-Host "Checking 'Application' logs.." -ForegroundColor Yellow
 
-
     # Define log levels
     $Levels = @{
         1 = 'Critical'
@@ -28,7 +27,7 @@ if ($LogNamesTable.Values -contains $Question) {
     }
 
     # Write out the log levels
-    Write-Host "Available log levels are:"
+    Write-Host "`nAvailable log levels are:"
     $Levels.Values | ForEach-Object { Write-Host $_ -ForegroundColor Magenta }
 
     # Get the log level you want to check
