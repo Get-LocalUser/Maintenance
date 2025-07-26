@@ -1,18 +1,15 @@
 <#
-=============================================================================================
-Name:           System Repair
-Description:    This script executes common commands that check and repair Windows files, volumes etc.
-Prerequisites:  N/A
+.DESCRIPTION
+    This script performs several system repair tasks to maintain Windows integrity.
 
-Script Tasks: 
-~~~~~~~~~~~~~~~~~
-1. Checks if you ran the script as Administrator and if not relaunches as Administrator.
-2. Executes Disk-Cleanup.
-3. Executes SFC and performs repair if needed.
-4. Executes Repair-Volume and performs reapir if needed.
-5. Executes Repair-WindowsImage and performs repair if needed.
-============================================================================================
+    Tasks performed:
+    1. Checks if the script is run as Administrator. If not, relaunches with elevated privileges.
+    2. Executes Disk Cleanup.
+    3. Runs System File Checker (SFC) and repairs files if needed.
+    4. Runs Repair-Volume and repairs the volume if needed.
+    5. Executes Repair-WindowsImage to fix Windows image issues if detected.
 #>
+
 
 If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]'Administrator')) {
     Write-Host "You didn't run this script as an Administrator. This script will self elevate to run as an Administrator and continue." -ForegroundColor Red
