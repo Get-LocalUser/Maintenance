@@ -16,7 +16,7 @@ If (!([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]:
 }
 $cleaner = "C:\Windows\System32\cleanmgr.exe"
 $filechecker = "C:\Windows\System32\sfc.exe"
-Write-Host "Starting system performance optimizer..." -ForegroundColor Yellow
+Write-Host "Starting system repair..." -ForegroundColor Yellow
 Start-Process -FilePath $cleaner -ArgumentList "/autoclean" -Wait -NoNewWindow
  
 Start-Sleep -Seconds 5
