@@ -1,4 +1,4 @@
-# Must be running PowerShell 7
+
 function Show-MainMenu {
     Clear-Host
     Write-Host "================ IT Admin Toolkit ================" -ForegroundColor Cyan
@@ -156,7 +156,7 @@ function Invoke-MaintenanceTasks {
             '5' {
                 $targets = @("8.8.8.8", "1.1.1.1", "google.com")
                 foreach ($target in $targets) {
-                    Test-Connection -ComputerName $target -Count 3
+                    Test-Connection -ComputerName $target -Count 3 |
                     Select-Object Address, IPV4Address, ResponseTime
                 }
                 Pause
@@ -240,7 +240,7 @@ function Invoke-NetworkTasks {
 
             '2' {
                 $port = Read-Host "What port do you want to test? This will test using Google.com"
-                Test-Connection -TargetName "Google.com" -TcpPort $port
+                Test-NetConnection -ComputerName "google.com" -Port $port
                 Pause
             }
 
