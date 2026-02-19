@@ -1,7 +1,7 @@
 
 function Show-MainMenu {
     Clear-Host
-    Write-Host "================ IT Admin Toolkit ================" -ForegroundColor Cyan
+    Write-Host "================ Options ================" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "1:  Local Computer Maintenance"
     Write-Host "2:  Network & Connectivity Tools"
@@ -42,7 +42,8 @@ function Show-NetworkMenu {
 
 function Show-ADMenu {
     Clear-Host
-    Write-Host "================ Local Computer Maintenance ================" -ForegroundColor Yellow
+    Write-Host "================ Active Directory Tasks ================" -ForegroundColor Yellow
+    Write-Host "**This requires RSAT to be installed on your machine**" -ForegroundColor DarkRed
     Write-Host ""
     Write-Host "1: Get Disabled Users"
     Write-Host "2: Get Locked Out Users"
