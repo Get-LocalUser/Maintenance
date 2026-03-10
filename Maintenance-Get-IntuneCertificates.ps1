@@ -1,0 +1,1 @@
+Get-ChildItem Cert:\LocalMachine\My | Where-Object Issuer -like "*Intune*" | select-Object Issuer, NotBefore, NotAfter
